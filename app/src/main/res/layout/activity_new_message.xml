@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewMessageActivity">
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toStartOf="@+id/select_contact"
+        android:background="@drawable/input_style"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:id="@+id/select_contact"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="7dp"
+        android:background="@android:drawable/ic_input_add"
+        android:backgroundTint="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/message_body"
+        android:layout_width="300dp"
+        android:layout_height="92dp"
+        android:layout_alignStart="@+id/phone_number"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toStartOf="@+id/send_message"
+        android:ems="10"
+        android:hint="Enter Message"
+        android:inputType="text"
+        android:background="@drawable/message_input_style"
+        android:paddingLeft="5dp"/>
+
+    <Button
+        android:id="@+id/send_message"
+        android:layout_width="53dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="30dp"
+        android:background="@android:drawable/ic_menu_send"
+        android:backgroundTint="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/message_body"
+        android:layout_below="@id/phone_number">
+        <ListView
+            android:id="@+id/same_messages_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+        </ListView>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/message_body"
+        android:layout_below="@+id/phone_number"
+        android:layout_alignStart="@+id/phone_number"
+        android:layout_alignLeft="@+id/phone_number"
+        android:layout_alignEnd="@+id/select_contact"
+        android:layout_alignRight="@+id/phone_number"
+        android:padding="100dp"
+        android:progressTint="@color/colorPrimary" />
+        <!--android:progressDrawable="@drawable/circular_progress_bar"-->
+
+</RelativeLayout>
